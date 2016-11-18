@@ -1,0 +1,41 @@
+{
+	"name" : "ijeffro/laravel-airlines",
+	"description" : "Laravel Airlines is a bundle for Laravel, providing Iata Code ISO 3166 3 and country codes for all the airlines.",
+	"type" : "laravel-library",
+	"authors" : [{
+			"name" : "Phil Graham",
+			"email" : "phil@flairdesign.uk",
+			"homepage" : "https://www.flairdesign.uk",
+			"role" : "developer"
+		}, {
+			"name" : "ijeffro",
+			"role" : "developer"
+		}
+	],
+	"keywords" : [
+		"laravel",
+		"airlines",
+		"country_code",
+		"iso_3166_3"
+	],
+	"homepage" : "https://github.com/ijeffro/laravel-airlines",
+	"license" : [
+		"MIT"
+	],
+	"require" : {
+		"php" : ">=5.3.0"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"ijeffro\\Airlines" : "src/"
+		},
+		"classmap" : [
+			"src/commands"
+		]
+	},
+	"minimum-stability" : "stable",
+	"support" : {
+		"source" : "https://github.com/ijeffro/laravel-airlines",
+		"issues" : "https://github.com/ijeffro/laravel-airlines/issues"
+	}
+}
