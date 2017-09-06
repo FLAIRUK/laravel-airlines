@@ -69,10 +69,10 @@ class AirlinesServiceProvider extends ServiceProvider {
      */
     protected function registerCommands()
     {
-        $this->app->singleton('command.airports.migration', function ($app) {
+        $this->app->singleton('command.airlines.migration', function ($app) {
             return new MigrationCommand($app);
         });
-        $this->commands('command.airports.migration');
+        $this->commands('command.airlines.migration');
     }
 
     /**
