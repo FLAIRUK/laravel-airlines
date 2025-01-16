@@ -7,7 +7,7 @@
 
 Laravel Airlines is a bundle for Laravel, providing Iata Code ISO 3166_3 and country codes for all the airlines.
 
-**Please note that the dev-master version is for Laravel 5 only**
+**Please note that the dev-master version is for Laravel 5**
 
 ## Installation
 
