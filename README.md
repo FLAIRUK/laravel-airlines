@@ -11,7 +11,7 @@
   <a href="https://github.com/FLAIRUK/laravel-airlines/actions/workflows/tests.yml" target="_blank"><img src="https://img.shields.io/badge/Lint-%E2%9C%93-2EA043?style=flat&logo=githubactions&logoColor=white" alt="Lint"></a>&nbsp;
   <a href="https://github.com/FLAIRUK/laravel-airlines/actions/workflows/tests.yml" target="_blank"><img src="https://img.shields.io/badge/Tests-%E2%9C%93-2EA043?style=flat&logo=githubactions&logoColor=white" alt="Tests"></a>&nbsp;
   <a href="https://packagist.org/packages/flairuk/laravel-airlines" target="_blank"><img src="https://img.shields.io/packagist/dt/flairuk/laravel-airlines?style=flat&logo=packagist&logoColor=white&label=Downloads&color=F28D1A" alt="Downloads on Packagist"></a>&nbsp;
-  <a href="https://github.com/FLAIRUK/laravel-airlines/blob/master/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/FLAIRUK/laravel-airlines?style=flat&label=License&color=3DA639" alt="MIT licence"></a>&nbsp;
+  <a href="https://github.com/FLAIRUK/laravel-airlines/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/FLAIRUK/laravel-airlines?style=flat&label=License&color=3DA639" alt="MIT licence"></a>&nbsp;
   <a href="https://www.iata.org/en/publications/directories/code-search/" target="_blank"><img src="https://img.shields.io/badge/Data-IATA-2563EB?style=flat" alt="IATA"></a>&nbsp;
   <br>&nbsp;
 </h2>
