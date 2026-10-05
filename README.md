@@ -1,4 +1,9 @@
-# Laravel Airlines
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="art/logo-dark.svg">
+    <img src="art/logo-light.svg" alt="Laravel Airlines" width="420">
+  </picture>
+</p>
 
 [![Tests](https://github.com/FLAIRUK/laravel-airlines/actions/workflows/tests.yml/badge.svg)](https://github.com/FLAIRUK/laravel-airlines/actions/workflows/tests.yml)
 [![Latest Stable Version](https://poser.pugx.org/ijeffro/laravel-airlines/v/stable)](https://packagist.org/packages/ijeffro/laravel-airlines)
