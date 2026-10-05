@@ -5,18 +5,33 @@
   </picture>
 </p>
 
-[![Tests](https://github.com/FLAIRUK/laravel-airlines/actions/workflows/tests.yml/badge.svg)](https://github.com/FLAIRUK/laravel-airlines/actions/workflows/tests.yml)
-[![Latest Stable Version](https://poser.pugx.org/ijeffro/laravel-airlines/v/stable)](https://packagist.org/packages/ijeffro/laravel-airlines)
-[![License](https://poser.pugx.org/ijeffro/laravel-airlines/license)](https://packagist.org/packages/ijeffro/laravel-airlines)
+<h2 align="center">
+  <a href="https://www.php.net/" target="_blank"><img src="https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=flat&logo=php&logoColor=white" alt="PHP 8.2+"></a>&nbsp;
+  <a href="https://laravel.com/docs/" target="_blank"><img src="https://img.shields.io/badge/Laravel-12%20%7C%2013-FF2D20?style=flat&logo=laravel&logoColor=white" alt="Laravel 12 or 13"></a>&nbsp;
+  <a href="https://github.com/FLAIRUK/laravel-airlines/actions/workflows/tests.yml" target="_blank"><img src="https://img.shields.io/github/actions/workflow/status/FLAIRUK/laravel-airlines/tests.yml?branch=master&style=flat&logo=githubactions&logoColor=white&label=Tests" alt="Tests"></a>&nbsp;
+  <a href="https://packagist.org/packages/ijeffro/laravel-airlines" target="_blank"><img src="https://img.shields.io/packagist/dt/ijeffro/laravel-airlines?style=flat&logo=packagist&logoColor=white&label=Downloads&color=F28D1A" alt="Downloads on Packagist"></a>&nbsp;
+  <a href="https://github.com/FLAIRUK/laravel-airlines/blob/master/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/FLAIRUK/laravel-airlines?style=flat&label=License&color=3DA639" alt="MIT licence"></a>&nbsp;
+  <a href="https://www.iata.org/en/publications/directories/code-search/" target="_blank"><img src="https://img.shields.io/badge/Data-IATA-2563EB?style=flat" alt="IATA"></a>&nbsp;
+  <br>&nbsp;
+</h2>
 
-IATA airline designators (`BA`, `EK`, `QF`, …) for Laravel 12 and 13.
+**Laravel Airlines** — IATA airline designators (`BA`, `EK`, `QF`, …) for Laravel 12 and 13.
 
 - **No database required.** Look airlines up through a facade backed by an in-memory dataset.
 - **Typed results.** Every lookup returns readonly `Airline` objects in Laravel collections.
 - **Validation rule.** `new AirlineCode` accepts known designators only.
 - **Optional table.** Publish a migration and seed an `airlines` table when other tables need to reference airlines.
 
-## Installation
+<p align="center">
+  📦&nbsp;<a href="#-installation">Installation</a> ·
+  🚀&nbsp;<a href="#-usage">Usage</a> ·
+  💾&nbsp;<a href="#-database-table-optional">Database table</a> ·
+  🔄&nbsp;<a href="#-upgrading-from-dev-master">Upgrading</a>
+</p>
+
+<br><br>
+
+## 📦 Installation
 
 ```bash
 composer require ijeffro/laravel-airlines
@@ -24,7 +39,9 @@ composer require ijeffro/laravel-airlines
 
 Laravel discovers the service provider and the `Airlines` facade automatically.
 
-## Usage
+<br><br>
+
+## 🚀 Usage
 
 ```php
 use FLAIRUK\Airlines\Facades\Airlines;
@@ -67,7 +84,9 @@ The facade resolves a singleton `FLAIRUK\Airlines\Airlines`, which you can type-
 public function __construct(private \FLAIRUK\Airlines\Airlines $airlines) {}
 ```
 
-## Database table (optional)
+<br><br>
+
+## 💾 Database table (optional)
 
 If you need airlines in your database, for example for foreign keys or joins:
 
@@ -99,11 +118,13 @@ Airline::inCountry('GB')->orderBy('name')->get();
 
 The table name and connection come from `AIRLINES_TABLE` and `AIRLINES_DB_CONNECTION`, or from the published config.
 
-## Upgrading from 1.x / dev-master
+<br><br>
+
+## 🔄 Upgrading from dev-master
 
 Version 2 is a rewrite. Breaking changes:
 
-| 1.x | 2.x |
+| dev-master | 1.0 |
 | --- | --- |
 | `ijeffro\Airlines\…` namespace | `FLAIRUK\Airlines\…` |
 | Facade `ijeffro\Airlines\AirlinesFacade` | `FLAIRUK\Airlines\Facades\Airlines` (auto-discovered) |
@@ -123,12 +144,16 @@ Row `id`s are unchanged, so existing foreign keys stay valid. The dataset was al
 
 After upgrading, run `php artisan airlines:seed --prune` to update a seeded table.
 
-## Testing
+<br><br>
+
+## 🧪 Testing
 
 ```bash
 composer test
 ```
 
-## License
+<br><br>
+
+## 📄 License
 
 MIT. See [LICENSE](LICENSE).
