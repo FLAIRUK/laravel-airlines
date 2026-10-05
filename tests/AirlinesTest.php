@@ -124,4 +124,13 @@ class AirlinesTest extends TestCase
         $this->assertFalse(Validator::make(['airline' => 'ZZZ'], ['airline' => new AirlineCode])->passes());
         $this->assertFalse(Validator::make(['airline' => ['BA']], ['airline' => new AirlineCode])->passes());
     }
+
+    #[Test]
+    public function codes_are_always_strings(): void
+    {
+        $codes = Airlines::codes();
+
+        $this->assertContains('00', $codes);
+        $this->assertSame([], array_filter($codes, fn ($code) => ! is_string($code)));
+    }
 }

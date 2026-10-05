@@ -38,6 +38,8 @@
 composer require flairuk/laravel-airlines
 ```
 
+Requires PHP 8.2 or later with Laravel 12, or PHP 8.3 or later with Laravel 13.
+
 Laravel discovers the service provider and the `Airlines` facade automatically.
 
 <br><br>
@@ -92,7 +94,8 @@ public function __construct(private \FLAIRUK\Airlines\Airlines $airlines) {}
 If you need airlines in your database, for example for foreign keys or joins:
 
 ```bash
-php artisan airlines:install
+php artisan airlines:install             # publish config + migration, then ask to migrate and seed
+php artisan airlines:install --migrate   # migrate and seed without asking
 ```
 
 This command publishes `config/airlines.php` and a migration, then offers to run `migrate` and seed the table. You can re-seed at any time; it upserts rows, so re-running is safe:
@@ -130,7 +133,7 @@ Version 1.0 is a rewrite. Breaking changes:
 | Package `ijeffro/laravel-airlines` | `flairuk/laravel-airlines` |
 | `ijeffro\Airlines\…` namespace | `FLAIRUK\Airlines\…` |
 | Facade `ijeffro\Airlines\AirlinesFacade` | `FLAIRUK\Airlines\Facades\Airlines` (auto-discovered) |
-| `Airlines::getList($sort)` (array) | `Airlines::all()->sortBy($sort)` (Collection of `Airline`) |
+| `Airlines::getList($sort)` (array) | `Airlines::all()->sortBy($property, SORT_NATURAL \| SORT_FLAG_CASE)` (Collection of `Airline`; properties are camelCase, e.g. `countryCode`) |
 | `Airlines::getOne($id)` | `Airlines::findById($id)` |
 | `Airlines::getListForSelect()` | `Airlines::options()` |
 | `php artisan airlines:migration` (generated seeder in `database/seeds`) | `php artisan airlines:install` / `airlines:seed` |
@@ -145,6 +148,18 @@ Row `id`s are unchanged, so existing foreign keys stay valid. The dataset was al
 - Empty strings are now `null`.
 
 After upgrading, run `php artisan airlines:seed --prune` to update a seeded table.
+
+> [!WARNING]
+> The dev-master migration made `country_code` and `country_name` `NOT NULL`, but ten airlines in 1.0 have no country, so seeding an old table fails. Make the two columns nullable first, in a migration of your own:
+>
+> ```php
+> Schema::table('airlines', function (Blueprint $table) {
+>     $table->string('country_code', 2)->nullable()->change();
+>     $table->string('country_name')->nullable()->change();
+> });
+> ```
+>
+> Or drop the old table and create it again with `php artisan airlines:install`.
 
 <br><br>
 

@@ -120,7 +120,8 @@ class Airlines
      */
     public function codes(): array
     {
-        return array_keys($this->index());
+        // All-digit designators such as "00" become int array keys; hand them back as strings.
+        return array_map(strval(...), array_keys($this->index()));
     }
 
     /**
