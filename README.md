@@ -10,7 +10,7 @@
   <a href="https://laravel.com/docs/" target="_blank"><img src="https://img.shields.io/badge/Laravel-12%20%7C%2013-FF2D20?style=flat&logo=laravel&logoColor=white" alt="Laravel 12 or 13"></a>&nbsp;
   <a href="https://github.com/FLAIRUK/laravel-airlines/actions/workflows/tests.yml" target="_blank"><img src="https://img.shields.io/badge/Lint-%E2%9C%93-2EA043?style=flat&logo=githubactions&logoColor=white" alt="Lint"></a>&nbsp;
   <a href="https://github.com/FLAIRUK/laravel-airlines/actions/workflows/tests.yml" target="_blank"><img src="https://img.shields.io/badge/Tests-%E2%9C%93-2EA043?style=flat&logo=githubactions&logoColor=white" alt="Tests"></a>&nbsp;
-  <a href="https://packagist.org/packages/ijeffro/laravel-airlines" target="_blank"><img src="https://img.shields.io/packagist/dt/ijeffro/laravel-airlines?style=flat&logo=packagist&logoColor=white&label=Downloads&color=F28D1A" alt="Downloads on Packagist"></a>&nbsp;
+  <a href="https://packagist.org/packages/flairuk/laravel-airlines" target="_blank"><img src="https://img.shields.io/packagist/dt/flairuk/laravel-airlines?style=flat&logo=packagist&logoColor=white&label=Downloads&color=F28D1A" alt="Downloads on Packagist"></a>&nbsp;
   <a href="https://github.com/FLAIRUK/laravel-airlines/blob/master/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/FLAIRUK/laravel-airlines?style=flat&label=License&color=3DA639" alt="MIT licence"></a>&nbsp;
   <a href="https://www.iata.org/en/publications/directories/code-search/" target="_blank"><img src="https://img.shields.io/badge/Data-IATA-2563EB?style=flat" alt="IATA"></a>&nbsp;
   <br>&nbsp;
@@ -35,7 +35,7 @@
 ## 📦 Installation
 
 ```bash
-composer require ijeffro/laravel-airlines
+composer require flairuk/laravel-airlines
 ```
 
 Laravel discovers the service provider and the `Airlines` facade automatically.
@@ -127,6 +127,7 @@ Version 1.0 is a rewrite. Breaking changes:
 
 | dev-master | 1.0 |
 | --- | --- |
+| Package `ijeffro/laravel-airlines` | `flairuk/laravel-airlines` |
 | `ijeffro\Airlines\…` namespace | `FLAIRUK\Airlines\…` |
 | Facade `ijeffro\Airlines\AirlinesFacade` | `FLAIRUK\Airlines\Facades\Airlines` (auto-discovered) |
 | `Airlines::getList($sort)` (array) | `Airlines::all()->sortBy($sort)` (Collection of `Airline`) |
